@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+body {
+    font-family: 'Inter', 'Hind Siliguri', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Realistic blinking eye animation */
+@keyframes blink {
+    0%, 85%, 100% { 
+        transform: scaleY(1); 
+    }
+    90%, 95% { 
+        transform: scaleY(0.05); 
+    }
+}
+
+/* Realistic teardrop shape */
+.teardrop {
+    width: 8px;
+    height: 12px;
+    background: linear-gradient(180deg, 
+        rgba(147, 197, 253, 0.9) 0%, 
+        rgba(96, 165, 250, 0.95) 40%,
+        rgba(59, 130, 246, 0.85) 100%);
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    transform: rotate(-45deg);
+    box-shadow: 
+        inset -2px -2px 4px rgba(255,255,255,0.4),
+        inset 1px 1px 2px rgba(59,130,246,0.3),
+        0 2px 8px rgba(59,130,246,0.4);
+    position: relative;
+}
+
+.teardrop::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 30%;
+    height: 30%;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+}
+
+.teardrop-small {
+    width: 6px;
+    height: 9px;
+}
+
+/* Slow falling tear animation - slower and more emotional */
+@keyframes tearfall-slow {
+    0%, 88% { 
+        opacity: 0;
+        transform: translateY(-2px) rotate(-45deg) scale(0);
+    }
+    /* Tear forms after blink - starts at eye */
+    90% {
+        opacity: 0.8;
+        transform: translateY(0) rotate(-45deg) scale(0.8);
+    }
+    92% {
+        opacity: 1;
+        transform: translateY(10px) rotate(-45deg) scale(1);
+    }
+    /* Very slowly accelerating fall */
+    94% {
+        opacity: 1;
+        transform: translateY(40px) rotate(-45deg) scale(1);
+    }
+    96% {
+        opacity: 0.95;
+        transform: translateY(100px) rotate(-45deg) scale(0.98);
+    }
+    97% {
+        opacity: 0.9;
+        transform: translateY(180px) rotate(-45deg) scale(0.9);
+    }
+    98% {
+        opacity: 0.8;
+        transform: translateY(300px) rotate(-45deg) scale(0.8);
+    }
+    99% {
+        opacity: 0.5;
+        transform: translateY(450px) rotate(-45deg) scale(0.6);
+    }
+    100% { 
+        opacity: 0;
+        transform: translateY(700px) rotate(-45deg) scale(0.3);
+    }
+}
+
+/* Realistic sad eye styling */
+.sad-eye {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sad-eye-outer {
+    width: 22px;
+    height: 14px;
+    background: linear-gradient(180deg, #fef2f2 0%, #fecaca 100%);
+    border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+    border: 1.5px solid rgba(220, 38, 38, 0.4);
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+    animation: blink 6s ease-in-out infinite;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+}
+
+.sad-eye-iris {
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle at 30% 30%, #7c3aed, #4c1d95);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.sad-eye-iris::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sad-eye-iris::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    top: 25%;
+    left: 25%;
+}

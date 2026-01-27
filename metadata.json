@@ -1,0 +1,7 @@
+{
+  "name": "Smart Lineman - Safety Companion",
+  "description": "A field-ready safety and training app for Indian electrical linemen, focused on life-saving protocols, emergency tools, and emotional sensitization.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
