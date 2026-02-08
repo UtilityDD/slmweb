@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" fill="none">
+  <!-- Background -->
+  <rect width="180" height="180" rx="34" fill="#3B82F6"/>
+  
+  <!-- Shield -->
+  <path d="M90 38L122 52V79C122 101 108 120 90 131C72 120 58 101 58 79V52L90 38Z" fill="#FCD34D" stroke="#F59E0B" stroke-width="3"/>
+  
+  <!-- Lightning Bolt -->
+  <path d="M95 66L83 89H90L85 112L101 86H94L95 66Z" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+</svg>

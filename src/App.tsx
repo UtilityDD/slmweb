@@ -15,15 +15,16 @@ import GamePage from './pages/GamePage';
 import CommunityPage from './pages/CommunityPage';
 import Dashboard from './pages/Dashboard';
 import JoinPage from './pages/JoinPage';
-import { 
-  ShieldAlert, 
-  Zap, 
-  Stethoscope, 
-  PhoneCall, 
-  Droplets, 
-  Scale, 
-  Briefcase, 
-  Trophy, 
+import PWAUpdateNotification from './components/PWAUpdateNotification';
+import {
+  ShieldAlert,
+  Zap,
+  Stethoscope,
+  PhoneCall,
+  Droplets,
+  Scale,
+  Briefcase,
+  Trophy,
   Users,
   Home,
   UserPlus
@@ -91,11 +92,11 @@ const App: React.FC = () => {
     };
 
     window.addEventListener('popstate', handlePopState);
-    
+
     // Set initial state in history
     const initialPage = getPageFromHash();
     const initialLang = getLangFromUrl();
-    window.history.replaceState({ page: initialPage, lang: initialLang }, '', 
+    window.history.replaceState({ page: initialPage, lang: initialLang }, '',
       `${window.location.pathname}?lang=${initialLang}#${initialPage}`);
 
     return () => window.removeEventListener('popstate', handlePopState);
@@ -156,6 +157,9 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
+      {/* PWA Update Notification */}
+      <PWAUpdateNotification />
+
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div className="px-4 py-3 flex justify-between items-center">
@@ -165,38 +169,37 @@ const App: React.FC = () => {
             </div>
             <h1 className="font-bold text-lg text-slate-800">{t.appName}</h1>
           </div>
-          
+
           {/* Desktop Navigation */}
           {hasAgreed && (
             <nav className="hidden lg:flex items-center gap-1">
-              <DesktopNavItem 
-                label={t.nav.home} 
-                active={currentPage === AppPages.DASHBOARD} 
-                onClick={() => navigate(AppPages.DASHBOARD)} 
+              <DesktopNavItem
+                label={t.nav.home}
+                active={currentPage === AppPages.DASHBOARD}
+                onClick={() => navigate(AppPages.DASHBOARD)}
               />
-              <DesktopNavItem 
-                label={t.nav.community} 
-                active={currentPage === AppPages.COMMUNITY} 
-                onClick={() => navigate(AppPages.COMMUNITY)} 
+              <DesktopNavItem
+                label={t.nav.community}
+                active={currentPage === AppPages.COMMUNITY}
+                onClick={() => navigate(AppPages.COMMUNITY)}
               />
-              <DesktopNavItem 
-                label={t.nav.emergency} 
-                active={currentPage === AppPages.EMERGENCY} 
-                onClick={() => navigate(AppPages.EMERGENCY)} 
+              <DesktopNavItem
+                label={t.nav.emergency}
+                active={currentPage === AppPages.EMERGENCY}
+                onClick={() => navigate(AppPages.EMERGENCY)}
               />
-              <DesktopNavItem 
-                label={t.nav.sop} 
-                active={currentPage === AppPages.TOOLKIT} 
-                onClick={() => navigate(AppPages.TOOLKIT)} 
+              <DesktopNavItem
+                label={t.nav.sop}
+                active={currentPage === AppPages.TOOLKIT}
+                onClick={() => navigate(AppPages.TOOLKIT)}
               />
               {/* Desktop Story Button with Realistic Sad Eye */}
-              <button 
+              <button
                 onClick={() => navigate(AppPages.STORY)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors relative overflow-visible ${
-                  currentPage === AppPages.STORY 
-                    ? 'bg-red-100 text-red-700' 
-                    : 'text-red-600 hover:bg-red-50'
-                }`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors relative overflow-visible ${currentPage === AppPages.STORY
+                  ? 'bg-red-100 text-red-700'
+                  : 'text-red-600 hover:bg-red-50'
+                  }`}
               >
                 {/* Realistic Sad Eye */}
                 <div className="sad-eye relative">
@@ -208,13 +211,12 @@ const App: React.FC = () => {
                 </div>
                 {lang === 'bn' ? 'গল্প' : 'Stories'}
               </button>
-              <button 
+              <button
                 onClick={() => navigate(AppPages.JOIN)}
-                className={`ml-2 px-4 py-2 rounded-lg text-sm font-bold transition-colors ${
-                  currentPage === AppPages.JOIN 
-                    ? 'bg-blue-700 text-white' 
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
+                className={`ml-2 px-4 py-2 rounded-lg text-sm font-bold transition-colors ${currentPage === AppPages.JOIN
+                  ? 'bg-blue-700 text-white'
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  }`}
               >
                 {t.nav.join}
               </button>
@@ -222,7 +224,7 @@ const App: React.FC = () => {
           )}
 
           <div className="flex items-center gap-2">
-            <button 
+            <button
               onClick={() => navigate(AppPages.STORY)}
               className="lg:hidden flex items-center gap-1.5 bg-gradient-to-b from-red-50 to-red-100 px-3 py-1.5 rounded-full text-sm font-semibold text-red-600 border border-red-200 hover:from-red-100 hover:to-red-200 transition-all relative overflow-visible"
               title={lang === 'bn' ? 'বাস্তব ঘটনা' : 'Real Stories'}
@@ -237,7 +239,7 @@ const App: React.FC = () => {
               </div>
               <span className="hidden sm:inline">{lang === 'bn' ? 'গল্প' : 'Stories'}</span>
             </button>
-            <button 
+            <button
               onClick={toggleLang}
               className="bg-slate-100 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-600 border border-slate-200 hover:bg-slate-200 transition-colors"
             >
@@ -267,15 +269,14 @@ const App: React.FC = () => {
 };
 
 const NavItem: React.FC<{ icon: React.ReactNode, label: string, active: boolean, onClick: () => void, highlighted?: boolean }> = ({ icon, label, active, onClick, highlighted }) => (
-  <button 
+  <button
     onClick={onClick}
-    className={`flex flex-col items-center gap-1 flex-1 py-1 transition-colors ${
-      highlighted 
-        ? 'text-white bg-blue-600 rounded-xl mx-1 py-2' 
-        : active 
-          ? 'text-blue-600' 
-          : 'text-slate-400'
-    }`}
+    className={`flex flex-col items-center gap-1 flex-1 py-1 transition-colors ${highlighted
+      ? 'text-white bg-blue-600 rounded-xl mx-1 py-2'
+      : active
+        ? 'text-blue-600'
+        : 'text-slate-400'
+      }`}
   >
     {icon}
     <span className="text-[10px] font-bold uppercase tracking-wider">{label}</span>
@@ -284,13 +285,12 @@ const NavItem: React.FC<{ icon: React.ReactNode, label: string, active: boolean,
 
 // Desktop Navigation Item
 const DesktopNavItem: React.FC<{ label: string, active: boolean, onClick: () => void }> = ({ label, active, onClick }) => (
-  <button 
+  <button
     onClick={onClick}
-    className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-      active 
-        ? 'bg-slate-100 text-blue-600' 
-        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-800'
-    }`}
+    className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${active
+      ? 'bg-slate-100 text-blue-600'
+      : 'text-slate-600 hover:bg-slate-50 hover:text-slate-800'
+      }`}
   >
     {label}
   </button>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Dark gradient background -->
+  <defs>
+    <linearGradient id="darkBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#020617;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sorrowGlow2" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#991b1b;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#450a0a;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#darkBg2)"/>
+  <rect width="400" height="400" fill="url(#sorrowGlow2)"/>
+  
+  <!-- Painful face - showing anguish -->
+  <g transform="translate(200, 200)">
+    <!-- Face outline -->
+    <ellipse cx="0" cy="0" rx="90" ry="110" fill="#3f3f46" opacity="0.4" stroke="#71717a" stroke-width="2"/>
+    
+    <!-- Tightly closed eyes in pain -->
+    <g transform="translate(-35, -20)">
+      <!-- Left eye - squeezed shut -->
+      <path d="M -20,0 Q 0,-8 20,0 Q 0,6 -20,0 Z" fill="#1e293b" stroke="#dc2626" stroke-width="2"/>
+      <!-- Pain wrinkles above -->
+      <path d="M -25,-5 Q -12,-12 0,-14" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      <path d="M -28,-10 Q -15,-17 -2,-19" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.5"/>
+      <!-- Pain wrinkles below -->
+      <path d="M -25,5 Q -12,10 0,11" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      
+      <!-- Tear drops from closed eye -->
+      <ellipse cx="8" cy="12" rx="4" ry="7" fill="#3b82f6" opacity="0.8" transform="rotate(-20 8 12)">
+        <animate attributeName="cy" values="12;80;12" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    
+    <g transform="translate(35, -20)">
+      <!-- Right eye - squeezed shut -->
+      <path d="M -20,0 Q 0,-8 20,0 Q 0,6 -20,0 Z" fill="#1e293b" stroke="#dc2626" stroke-width="2"/>
+      <!-- Pain wrinkles above -->
+      <path d="M 25,-5 Q 12,-12 0,-14" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      <path d="M 28,-10 Q 15,-17 2,-19" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.5"/>
+      <!-- Pain wrinkles below -->
+      <path d="M 25,5 Q 12,10 0,11" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      
+      <!-- Tear drops -->
+      <ellipse cx="-8" cy="12" rx="4" ry="7" fill="#3b82f6" opacity="0.8" transform="rotate(20 -8 12)">
+        <animate attributeName="cy" values="12;80;12" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="3.2s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    
+    <!-- Nose -->
+    <path d="M 0,10 L -8,30 L 8,30 Z" fill="#52525b" opacity="0.5"/>
+    
+    <!-- Open mouth crying out in anguish -->
+    <ellipse cx="0" cy="55" rx="25" ry="30" fill="#18181b" stroke="#dc2626" stroke-width="2.5" opacity="0.9"/>
+    <path d="M -20,45 Q 0,50 20,45" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Tears streaming down cheeks -->
+    <ellipse cx="-45" cy="35" rx="5" ry="10" fill="#3b82f6" opacity="0.6" transform="rotate(-15 -45 35)">
+      <animate attributeName="cy" values="35;120;35" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="45" cy="35" rx="5" ry="10" fill="#3b82f6" opacity="0.6" transform="rotate(15 45 35)">
+      <animate attributeName="cy" values="35;120;35" dur="3.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="3.7s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Pain lines on forehead -->
+    <path d="M -40,-50 Q -20,-60 0,-62 Q 20,-60 40,-50" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.5"/>
+    <path d="M -35,-58 Q -15,-66 0,-68 Q 15,-66 35,-58" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.4"/>
+  </g>
+</svg>

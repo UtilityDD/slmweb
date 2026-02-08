@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Dark gradient background -->
+  <defs>
+    <linearGradient id="darkBg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0c0a1f;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="youthGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7c2d12;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#431407;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#darkBg4)"/>
+  <rect width="400" height="400" fill="url(#youthGlow)"/>
+  
+  <!-- Young innocent face in shock/pain -->
+  <g transform="translate(200, 200)">
+    <!-- Face outline (younger, rounder face) -->
+    <ellipse cx="0" cy="0" rx="85" ry="100" fill="#4a4a54" opacity="0.5" stroke="#71717a" stroke-width="2"/>
+    
+    <!-- Wide open eyes in shock (youth) -->
+    <g transform="translate(-30, -25)">
+      <!-- Left eye - wide open in fear/shock -->
+      <ellipse cx="0" cy="0" rx="22" ry="28" fill="#fef2f2" opacity="0.95"/>
+      
+      <!-- Shocked, dilated iris (young innocent eye) -->
+      <circle cx="0" cy="2" r="16" fill="#6366f1" opacity="0.8"/>
+      <circle cx="0" cy="2" r="16" fill="url(#youthGlow)" opacity="0.2"/>
+      
+      <!-- Very dilated pupil (shock/trauma) -->
+      <circle cx="0" cy="2" r="12" fill="#000"/>
+      
+      <!-- Faint light reflection (life fading) -->
+      <circle cx="-5" cy="-4" r="4" fill="#fff" opacity="0.3"/>
+      
+      <!-- Bloodshot veins -->
+      <line x1="-18" y1="-15" x2="10" y2="5" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-15" y1="12" x2="12" y2="-8" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      
+      <!-- Wide open eyelid -->
+      <path d="M -22,0 Q -12,-22 0,-24 Q 12,-22 22,0" 
+            fill="none" stroke="#991b1b" stroke-width="2" opacity="0.6"/>
+      <path d="M -22,0 Q -12,18 0,20 Q 12,18 22,0" 
+            fill="none" stroke="#991b1b" stroke-width="2" opacity="0.6"/>
+    </g>
+    
+    <g transform="translate(30, -25)">
+      <!-- Right eye - wide open in fear/shock -->
+      <ellipse cx="0" cy="0" rx="22" ry="28" fill="#fef2f2" opacity="0.95"/>
+      
+      <!-- Shocked iris -->
+      <circle cx="0" cy="2" r="16" fill="#6366f1" opacity="0.8"/>
+      <circle cx="0" cy="2" r="16" fill="url(#youthGlow)" opacity="0.2"/>
+      
+      <!-- Very dilated pupil -->
+      <circle cx="0" cy="2" r="12" fill="#000"/>
+      
+      <!-- Faint reflection -->
+      <circle cx="-5" cy="-4" r="4" fill="#fff" opacity="0.3"/>
+      
+      <!-- Bloodshot veins -->
+      <line x1="-18" y1="-15" x2="10" y2="5" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      <line x1="-15" y1="12" x2="12" y2="-8" stroke="#dc2626" stroke-width="1.5" opacity="0.6"/>
+      
+      <!-- Wide open eyelid -->
+      <path d="M -22,0 Q -12,-22 0,-24 Q 12,-22 22,0" 
+            fill="none" stroke="#991b1b" stroke-width="2" opacity="0.6"/>
+      <path d="M -22,0 Q -12,18 0,20 Q 12,18 22,0" 
+            fill="none" stroke="#991b1b" stroke-width="2" opacity="0.6"/>
+    </g>
+    
+    <!-- Young nose -->
+    <path d="M 0,5 L -6,22 L 6,22 Z" fill="#52525b" opacity="0.4"/>
+    
+    <!-- Mouth open in shock/silent scream -->
+    <ellipse cx="0" cy="50" rx="18" ry="22" fill="#18181b" stroke="#dc2626" stroke-width="2" opacity="0.85"/>
+    <ellipse cx="0" cy="48" rx="12" ry="15" fill="#7f1d1d" opacity="0.5"/>
+    
+    <!-- Tears streaming (young innocent victim) -->
+    <g>
+      <!-- Large tear from left eye -->
+      <ellipse cx="-35" cy="12" rx="6" ry="11" fill="#3b82f6" opacity="0.8" transform="rotate(-20 -35 12)">
+        <animate attributeName="cy" values="12;180;12" dur="3.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="3.5s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="-32" cy="25" rx="5" ry="9" fill="#3b82f6" opacity="0.7" transform="rotate(-20 -32 25)">
+        <animate attributeName="cy" values="25;195;25" dur="3.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0;0.7" dur="3.8s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Large tear from right eye -->
+      <ellipse cx="35" cy="12" rx="6" ry="11" fill="#3b82f6" opacity="0.8" transform="rotate(20 35 12)">
+        <animate attributeName="cy" values="12;180;12" dur="3.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="3.6s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="32" cy="25" rx="5" ry="9" fill="#3b82f6" opacity="0.7" transform="rotate(20 32 25)">
+        <animate attributeName="cy" values="25;195;25" dur="3.9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0;0.7" dur="3.9s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    
+    <!-- Shock/pain lines radiating from head -->
+    <g opacity="0.4" stroke="#dc2626" stroke-width="2">
+      <line x1="-90" y1="-40" x2="-100" y2="-50"/>
+      <line x1="90" y1="-40" x2="100" y2="-50"/>
+      <line x1="-80" y1="-60" x2="-88" y2="-72"/>
+      <line x1="80" y1="-60" x2="88" y2="-72"/>
+      <line x1="0" y1="-95" x2="0" y2="-110"/>
+    </g>
+    
+    <!-- Young innocent eyebrows (raised in shock) -->
+    <path d="M -50,-38 Q -35,-48 -15,-46" fill="none" stroke="#3f3f46" stroke-width="3" opacity="0.6"/>
+    <path d="M 50,-38 Q 35,-48 15,-46" fill="none" stroke="#3f3f46" stroke-width="3" opacity="0.6"/>
+  </g>
+</svg>

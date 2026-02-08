@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Night/Dark theme background -->
+  <defs>
+    <linearGradient id="nightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020617;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="electricGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#nightBg)"/>
+  <rect width="400" height="400" fill="url(#electricGlow)"/>
+  
+  <!-- Anguished eyes in the dark -->
+  <g transform="translate(200, 180)">
+    <!-- Left eye - staring in shock -->
+    <g transform="translate(-60, 0)">
+      <ellipse cx="0" cy="0" rx="35" ry="42" fill="#f8fafc" opacity="0.9"/>
+      <!-- Intense bloodshot veins -->
+      <path d="M -25,-20 Q -10,-10 15,5" stroke="#ef4444" stroke-width="1.2" fill="none" opacity="0.7"/>
+      <path d="M -20,15 Q 0,0 25,-10" stroke="#ef4444" stroke-width="1.2" fill="none" opacity="0.6"/>
+      <path d="M 10,25 Q 0,10 -30,-5" stroke="#ef4444" stroke-width="1" fill="none" opacity="0.5"/>
+      <circle cx="0" cy="4" r="18" fill="#0f172a" opacity="0.9"/>
+      <circle cx="0" cy="4" r="10" fill="#000"/>
+      <!-- Reflection of electrical blue spark -->
+      <circle cx="-6" cy="0" r="4" fill="#60a5fa" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="0.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Right eye - staring in shock -->
+    <g transform="translate(60, 0)">
+      <ellipse cx="0" cy="0" rx="35" ry="42" fill="#f8fafc" opacity="0.9"/>
+      <!-- Intense bloodshot veins -->
+      <path d="M 25,-20 Q 10,-10 -15,5" stroke="#ef4444" stroke-width="1.2" fill="none" opacity="0.7"/>
+      <path d="M 20,15 Q 0,0 -25,-10" stroke="#ef4444" stroke-width="1.2" fill="none" opacity="0.6"/>
+      <circle cx="0" cy="4" r="18" fill="#0f172a" opacity="0.9"/>
+      <circle cx="0" cy="4" r="10" fill="#000"/>
+      <!-- Spark reflection -->
+      <circle cx="-6" cy="0" r="4" fill="#60a5fa" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="0.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Heavy tears forming (night grief) -->
+    <g>
+      <ellipse cx="-60" cy="50" rx="7" ry="12" fill="#3b82f6" opacity="0.6" transform="rotate(-20 -60 50)">
+        <animate attributeName="cy" values="50;250;50" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="5s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="60" cy="50" rx="7" ry="12" fill="#3b82f6" opacity="0.6" transform="rotate(20 60 50)">
+        <animate attributeName="cy" values="50;250;50" dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="5.5s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    
+    <!-- Darkness shadow encroaching -->
+    <path d="M -150,-100 Q 0,-60 150,-100" stroke="#020617" stroke-width="40" fill="none" opacity="0.4"/>
+    <path d="M -150,150 Q 0,110 150,150" stroke="#020617" stroke-width="40" fill="none" opacity="0.4"/>
+  </g>
+</svg>

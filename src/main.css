@@ -145,3 +145,74 @@ body {
     top: 25%;
     left: 25%;
 }
+
+/* ===== Story Page Styles (New) ===== */
+
+/* Story Card Styles */
+.case-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-card .card-icon-container {
+    transition: all 0.3s ease;
+}
+
+/* Modal Slide-up Animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-overlay {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    animation: slideUp 0.4s ease;
+}
+
+/* Text truncation utility */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Mobile Responsiveness for Story Cards */
+@media (max-width: 768px) {
+    .case-card {
+        min-height: 100px;
+    }
+
+    .card-icon-container {
+        height: 100px !important;
+    }
+}
+
+/* Smooth scrolling for modal */
+.modal-body {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.read-more-btn:focus,
+.close-btn:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
